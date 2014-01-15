@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="mapViewStyle">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:clickable">true</item>
+        <item name="android:apiKey">0WpIKkVeTGCpsb5mShbqcH1WifdVsp6-R9SGOcw</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+</resources>

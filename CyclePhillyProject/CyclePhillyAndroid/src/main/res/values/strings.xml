@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="recording_title">Cycle Philly</string>
+	<string name="app_name">Cycle Philly</string>
+	<string name="icon">Bicycle Parking</string>
+	<string name="previous_trips">Saved Trips:</string>
+	<string name="startNewTrip">Start Trip!</string>
+	<string name="pauseButtonLabel">Pause</string>
+	<string name="finishedButtonLabel">Finish</string>
+	<string name="enterTripInfo">And add any comments about your trip here</string>
+	<string name="promptPurpose">Select the main purpose of this trip</string>
+	<string name="uploadProgressTitle">Sending…</string>
+	<string name="uploadProgressMessage">Sending your trip.\n\nThanks for using Cycle Philly!</string>
+	<string-array name="ageArray">
+	    <item></item>
+	    <item>Less than 18</item>
+	    <item>18–24</item>
+	    <item>25–34</item>
+	    <item>35–44</item>
+	    <item>45–54</item>
+	    <item>55–64</item>
+	    <item>65+</item>
+	</string-array>
+	
+	<string-array name="ethnicityArray">
+	    <item></item>
+	    <item>White</item>
+	    <item>African American</item>
+	    <item>Asian</item>
+	    <item>Native American</item>
+	    <item>Pacific Islander</item>
+	    <item>Multi-racial</item>
+	    <item>Hispanic / Mexican / Latino</item>
+	    <item>Other</item>
+	</string-array>
+	
+	<string-array name="incomeArray">
+	    <item></item>
+	    <item>Less than $20,000</item>
+	    <item>$20,000 to $39,999</item>
+	    <item>$40,000 to $59,999</item>
+	    <item>$60,000 to $74,999</item>
+	    <item>$75,000 to $99,999</item>
+	    <item>$100,000 or greater</item>
+	</string-array>
+	
+	<string-array name="ridertypeArray">
+	    <item></item>
+	    <item><![CDATA[Strong & fearless]]></item>
+	    <item><![CDATA[Enthused & confident]]></item>
+	    <item>Comfortable, but cautious</item>
+	    <item>Interested, but concerned</item>
+	</string-array>
+	
+	<string-array name="riderhistoryArray">
+	    <item></item>
+	    <item>Since childhood</item>
+	    <item>Several years</item>
+	    <item>One year or less</item>
+	    <item>Just trying it out / just started</item>
+	</string-array>
+	
+	<string name="nearbyRacksRoutes">Nearby Bike Racks and Routes:</string>
+	<string name="mapOfTrip">Map of your trip:</string>
+
+</resources>

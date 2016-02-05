@@ -109,10 +109,6 @@ public class NoteDetailActivity extends Activity {
 
 		note.updateNoteStatus(NoteData.STATUS_COMPLETE);
 
-		// Now create the MainInput Activity so BACK btn works properly
-		// Should not use this.
-
-		// TODO: note uploader
 		if (note.notestatus < NoteData.STATUS_SENT) {
 			// And upload to the cloud database, too! W00t W00t!
 			NoteUploader uploader = new NoteUploader(NoteDetailActivity.this);
@@ -124,7 +120,7 @@ public class NoteDetailActivity extends Activity {
 			Intent i = new Intent(getApplicationContext(), TabsConfig.class);
 			startActivity(i);
 
-			// And, show the map!
+			// And, show the mMap!
 			xi.putExtra("shownote", note.noteid);
 			xi.putExtra("uploadNote", true);
 			Log.v("Jason", "Noteid: " + String.valueOf(note.noteid));

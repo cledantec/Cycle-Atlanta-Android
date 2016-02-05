@@ -69,7 +69,7 @@ public class NoteMapActivity extends Activity {
 			t2.setText(note.notedetails);
 			t3.setText(note.notefancystart);
 
-			// Center & zoom the map
+			// Center & zoom the mMap
 			LatLng center = new LatLng(note.latitude * 1E-6,
 					note.longitude * 1E-6);
 
@@ -150,14 +150,14 @@ public class NoteMapActivity extends Activity {
 			// close -> go back to FragmentMainInput
 			onBackPressed();
 		case R.id.action_switch_note_view:
-			// animation for map and image..
+			// animation for mMap and image..
 			if (saveMenuItem.getTitle().equals("image")) {
-				saveMenuItem.setTitle("map");
+				saveMenuItem.setTitle("mMap");
 				Animation animFadeIn = AnimationUtils.loadAnimation(
 						getApplicationContext(), android.R.anim.fade_in);
 				imageView.setAnimation(animFadeIn);
 				imageView.setVisibility(View.VISIBLE);
-			} else if (saveMenuItem.getTitle().equals("map")) {
+			} else if (saveMenuItem.getTitle().equals("mMap")) {
 				saveMenuItem.setTitle("image");
 				Animation animFadeOut = AnimationUtils.loadAnimation(
 						getApplicationContext(), android.R.anim.fade_out);

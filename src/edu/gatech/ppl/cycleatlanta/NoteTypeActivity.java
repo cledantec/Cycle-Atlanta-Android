@@ -40,12 +40,12 @@ public class NoteTypeActivity extends Activity {
 		// Note Issue
 		noteTypeDescriptions
 				.put(0,
-						"Here’s a spot where the road needs to be repaired (pothole, rough concrete, gravel in the road, manhole cover, sewer grate).");
+						"Here-s a spot where the road needs to be repaired (pothole, rough concrete, gravel in the road, manhole cover, sewer grate).");
 		noteTypeDescriptions.put(1,
-				"Here’s a signal that you can’t activate with your bike.");
+				"Here-s a signal that you can-t activate with your bike.");
 		noteTypeDescriptions
 				.put(2,
-						"The bike lane is always blocked here, cars disobey \"no right on red\"… anything where the cops can help make cycling safer.");
+						"The bike lane is always blocked here, cars disobey \"no right on red\"- anything where the cops can help make cycling safer.");
 		noteTypeDescriptions.put(3,
 				"You need a bike rack to secure your bike here.");
 		noteTypeDescriptions
@@ -64,16 +64,16 @@ public class NoteTypeActivity extends Activity {
 						"Have a flat, a broken chain, or spongy brakes? Or do you need a bike to jump into this world of cycling in the first place? Here's a shop ready to help.");
 		noteTypeDescriptions
 				.put(8,
-						"Help us make cycling mainstream… here’s a place to refresh yourself before you re-enter the fashionable world of Atlanta.");
+						"Help us make cycling mainstream- here-s a place to refresh yourself before you re-enter the fashionable world of Atlanta.");
 		noteTypeDescriptions
 				.put(9,
 						"Here's an access point under the tracks, through the park, onto a trail, or over a ravine.");
 		noteTypeDescriptions
 				.put(10,
-						"Here’s a spot to fill your bottle on those hot summer days… stay hydrated, people. We need you.");
+						"Here-s a spot to fill your bottle on those hot summer days- stay hydrated, people. We need you.");
 		noteTypeDescriptions
 				.put(11,
-						"Anything else we should map to help your fellow cyclists? Share the details.");
+						"Anything else we should mMap to help your fellow cyclists? Share the details.");
 	}
 
 	@Override
@@ -117,9 +117,6 @@ public class NoteTypeActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				// TODO Auto-generated method stub
-				// view.setSelected(true);
-				// view.setBackgroundDrawable(parent.getResources().getDrawable(R.drawable.bg_key));
 				clearSelection();
 				oldSelection = view;
 				view.setBackgroundColor(Color.parseColor("#ff33b5e5"));

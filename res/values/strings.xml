@@ -92,4 +92,20 @@
 
     <string name="title_activity_main">Cycle Atlanta</string>
 
+
+    <string name="regions_api_url">https://script.google.com/macros/s/AKfycbxpN47XZQGAoh-N5wQtBETp51tznG3JnOrWsAVNy0xGJOkD8ibS/exec</string>
+    <!--<string name="regions_api_url">http://regions.onebusaway.org/regions-v3.json</string>-->
+    <string name="region_choose_region">Choose region</string>
+    <string name="preference_key_last_region_update">preference_last_region_update</string>
+    <string name="preference_key_auto_select_region">preference_auto_select_region</string>
+    <string name="preference_key_oba_api_url">preferences_oba_api_url</string>
+    <string name="preference_key_region">preference_region</string>
+    <string name="region_detecting_server">Finding your transit services&#8230;</string>
+    <string name="http_prefix">http://</string>
+    <string name="preference_key_experimental_regions">preference_experimental_regions</string>
+    <string name="region_region_found">Found %1$s region</string>
+    <string name="custom_api_server">Set Custom Api Server</string>
+    <string name="custom_api_server_title">Custom Api Server</string>
+    <string name="custom_api_url_error">Invalid URL. Please enter a working server url.</string>
+
 </resources>

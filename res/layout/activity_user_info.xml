@@ -38,11 +38,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/buttonGetStarted"
-                android:layout_below="@+id/buttonGetStarted"
+                android:layout_below="@+id/textView11"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="40dp"
                 android:text="Tell us about yourself"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                    android:id="@+id/textView0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/buttonGetStarted"
+                    android:layout_below="@+id/buttonGetStarted"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Select your current region"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -52,6 +63,16 @@
                 android:layout_below="@+id/textView1"
                 android:layout_marginTop="15dp"
                 android:text="Age"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/textView1"
+                android:layout_below="@+id/textView0"
+                android:layout_marginTop="20dp"
+                android:text="Regions"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <TextView
@@ -130,6 +151,15 @@
                 android:layout_alignRight="@+id/TextEmail"
                 android:layout_alignTop="@+id/textView2"
                 android:entries="@array/ageArray" />
+
+            <Spinner
+                android:id="@+id/regionsSpinner"
+                android:layout_alignLeft="@+id/TextEmail"
+                android:layout_alignRight="@+id/TextEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView0"
+                android:layout_toRightOf="@+id/textView1"/>
 
             <TextView
                 android:id="@+id/textView6"

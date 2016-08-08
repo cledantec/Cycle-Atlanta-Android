@@ -68,7 +68,7 @@ public class TripDetailActivity extends Activity {
 		Intent i = new Intent(getApplicationContext(), TabsConfig.class);
 		startActivity(i);
 
-		// And, show the map!
+		// And, show the mMap!
 		xi.putExtra("showtrip", trip.tripid);
 		xi.putExtra("uploadTrip", true);
 		Log.v("Jason", "Tripid: " + String.valueOf(trip.tripid));

@@ -74,7 +74,7 @@ public class TripMapActivity extends Activity {
 
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-		// Toast.makeText(this, "trip map", Toast.LENGTH_LONG).show();
+		// Toast.makeText(this, "trip mMap", Toast.LENGTH_LONG).show();
 
 		try {
 			// Set zoom controls
@@ -100,12 +100,12 @@ public class TripMapActivity extends Activity {
 			t2.setText(trip.info);
 			t3.setText(trip.fancystart);
 
-			// Center & zoom the map
+			// Center & zoom the mMap
 			// int latcenter = (trip.lathigh + trip.latlow) / 2;
 			// int lgtcenter = (trip.lgthigh + trip.lgtlow) / 2;
 			// LatLng center = new LatLng(latcenter, lgtcenter);
 
-			// map.animateCamera(CameraUpdateFactory.newLatLngZoom(center,16));
+			// mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(center,16));
 
 			// trip = trips[0]; // always get just the first trip
 
@@ -153,14 +153,14 @@ public class TripMapActivity extends Activity {
 			Log.v("Jason", String.valueOf(gpspoints.size()));
 
 			// //startpoint
-			// map.addMarker(new MarkerOptions()
+			// mMap.addMarker(new MarkerOptions()
 			// .icon(BitmapDescriptorFactory.fromResource(R.drawable.pingreen))
 			// .anchor(0.0f, 1.0f) // Anchors the marker on the bottom left
 			// .position(new LatLng(gpspoints.get(0).latitude*1E-6,
 			// gpspoints.get(0).longitude*1E-6)));
 			//
 			// //endpoint
-			// map.addMarker(new MarkerOptions()
+			// mMap.addMarker(new MarkerOptions()
 			// .icon(BitmapDescriptorFactory.fromResource(R.drawable.pinpurple))
 			// .anchor(0.0f, 1.0f) // Anchors the marker on the bottom left
 			// .position(new
@@ -178,7 +178,7 @@ public class TripMapActivity extends Activity {
 
 			polyline = map.addPolyline(rectOptions);
 
-			// map.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds.build(),
+			// mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds.build(),
 			// 480, 320, 10));
 
 			map.setOnCameraChangeListener(new OnCameraChangeListener() {
@@ -195,7 +195,7 @@ public class TripMapActivity extends Activity {
 
 			// MapController mc = mapView.getController();
 			// mc.animateTo(center);
-			// Add 500 to map span, to guarantee pins fit on map
+			// Add 500 to mMap span, to guarantee pins fit on mMap
 			// mc.zoomToSpan(500+trip.lathigh - trip.latlow, 500+trip.lgthigh -
 			// trip.lgtlow);
 
@@ -228,7 +228,7 @@ public class TripMapActivity extends Activity {
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK && map != null) {
-			// map.getOverlays().clear();
+			// mMap.getOverlays().clear();
 			polyline.remove();
 		}
 		return super.onKeyDown(keyCode, event);
@@ -300,7 +300,7 @@ public class TripMapActivity extends Activity {
 	// mapOverlays.add(new PushPinOverlay(trip.endpoint, R.drawable.pinpurple));
 	// }
 	//
-	// // Redraw the map
+	// // Redraw the mMap
 	// mapView.invalidate();
 	// }
 	// }

@@ -17,4 +17,6 @@
 <resources>
     <integer name="card_flip_time_full">300</integer>
     <integer name="card_flip_time_half">150</integer>
+    <integer name="google_play_services_version">8298000</integer>
+
 </resources>

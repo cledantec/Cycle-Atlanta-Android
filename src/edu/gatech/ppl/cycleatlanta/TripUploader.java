@@ -66,6 +66,8 @@ import android.util.Log;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import edu.gatech.ppl.cycleatlanta.region.elements.ObaRegion;
+
 public class TripUploader extends AsyncTask<Long, Integer, Boolean> {
 	Context mCtx;
 	DbAdapter mDb;
@@ -116,7 +118,7 @@ public class TripUploader extends AsyncTask<Long, Integer, Boolean> {
 		mDb.openReadOnly();
 		Cursor tripCoordsCursor = mDb.fetchAllCoordsForTrip(tripId);
 
-		// Build the map between JSON fieldname and phone db fieldname:
+		// Build the mMap between JSON fieldname and phone db fieldname:
 		Map<String, Integer> fieldMap = new HashMap<String, Integer>();
 		fieldMap.put(TRIP_COORDS_TIME,
 				tripCoordsCursor.getColumnIndex(DbAdapter.K_POINT_TIME));
@@ -371,8 +373,14 @@ public class TripUploader extends AsyncTask<Long, Integer, Boolean> {
 		}
 
 		HttpClient client = new DefaultHttpClient();
-		// TODO: Server URL
-		final String postUrl = "http://cycleatlanta.org/post_dev/";
+		ObaRegion currentRegion = Application.get().getCurrentRegion();
+		String postUrl;
+		if (currentRegion != null) {
+			postUrl = currentRegion.getBaseUrl();
+		} else {
+			postUrl = Application.get().getCustomApiUrl();
+		}
+
 		HttpPost postRequest = new HttpPost(postUrl);
 
 		try {

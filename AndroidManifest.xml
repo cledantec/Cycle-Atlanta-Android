@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="edu.gatech.ppl.cycleatlanta"
-    android:versionCode="2"
-    android:versionName="2.0" >
-
-    <uses-sdk
-        android:minSdkVersion="13"
-        android:targetSdkVersion="15" />
+>
 
     <uses-feature
         android:glEsVersion="0x00020000"
@@ -24,14 +19,18 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" >
     </uses-permission>
-    <uses-permission android:name="android.permission.INTERNET" >
-    </uses-permission>
+
+    <uses-sdk android:minSdkVersion="11"></uses-sdk>
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
+        android:name=".Application"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        <meta-data
+                android:name="com.google.android.gms.version"
+                android:value="@integer/google_play_services_version" />
         <activity
             android:name="edu.gatech.ppl.cycleatlanta.TabsConfig"
             android:label="@string/app_name" >
@@ -42,24 +41,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="edu.gatech.ppl.cycleatlanta.MainInputActivity"
-            android:label="@string/title_activity_main_input" >
-        </activity>
-        <activity
             android:name="edu.gatech.ppl.cycleatlanta.TripPurposeActivity"
             android:label="@string/title_activity_trip_purpose" >
         </activity>
-        <activity
-            android:name="edu.gatech.ppl.cycleatlanta.UserInfoActivity"
-            android:label="@string/title_activity_user_info" >
-        </activity>
+        <provider
+                android:name=".provider.ObaProvider"
+                android:authorities="${databaseAuthority}"/>
         <activity
             android:name="edu.gatech.ppl.cycleatlanta.TripMapActivity"
             android:label="@string/title_activity_trip_map" >
-        </activity>
-        <activity
-            android:name="edu.gatech.ppl.cycleatlanta.SavedTripsActivity"
-            android:label="@string/title_activity_saved_trips" >
         </activity>
         <activity
             android:name="edu.gatech.ppl.cycleatlanta.TripDetailActivity"
@@ -77,10 +67,6 @@
             android:name="edu.gatech.ppl.cycleatlanta.NoteMapActivity"
             android:label="@string/title_activity_note_map" >
         </activity>
-        <activity
-            android:name="edu.gatech.ppl.cycleatlanta.SavedNotesActivity"
-            android:label="@string/title_activity_saved_notes" >
-        </activity>
 
         <service
             android:name="edu.gatech.ppl.cycleatlanta.RecordingService"
@@ -88,14 +74,9 @@
             android:exported="true" >
         </service>
 
-        <activity
-            android:name="edu.gatech.ppl.cycleatlanta.MainActivity"
-            android:label="@string/title_activity_main" >
-        </activity>
-
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyC2yCvl0Jt-gnztoITh7WTBABv3KdLeD1o" />
+            android:value="AIzaSyB0nRhRzcprm2h9panNqdBsFzVXRI5JOtE" />
     </application>
 
 </manifest>

@@ -1,13 +1,34 @@
 apply plugin: 'android'
 
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.1.2'
+    }
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
+
 dependencies {
-    compile fileTree(dir: 'libs', include: '*.jar')
-    compile project(':google-play-services_lib')
+    compile 'com.google.android.gms:play-services-maps:8.3.0'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.6.2'
+    compile 'com.google.android.gms:play-services-location:8.3.0'
 }
 
 android {
-    compileSdkVersion 14
-    buildToolsVersion "18.1.1"
+    compileSdkVersion 19
+    buildToolsVersion "21.0.0"
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+    }
 
     sourceSets {
         main {
@@ -31,5 +52,57 @@ android {
         // by a similar customization.
         debug.setRoot('build-types/debug')
         release.setRoot('build-types/release')
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField "boolean", "USE_FIXED_REGION", "false" // Supports multi-region
+            // Below fields need to be defined so flavor builds, but will not be used by app
+            //buildConfigField "String", "DATABASE_AUTHORITY", "\"edu.gatech.ppl.cycleatlanta\""
+            manifestPlaceholders = [databaseAuthority: "edu.gatech.ppl.cycleatlanta"]
+            buildConfigField "String", "FIXED_REGION_NAME", "null"
+            buildConfigField "String", "FIXED_REGION_OBA_BASE_URL", "null"
+            buildConfigField "String", "FIXED_REGION_SIRI_BASE_URL", "null"
+            buildConfigField "double", "FIXED_REGION_BOUNDS_LAT", "0"
+            buildConfigField "double", "FIXED_REGION_BOUNDS_LON", "0"
+            buildConfigField "double", "FIXED_REGION_BOUNDS_LAT_SPAN", "0"
+            buildConfigField "double", "FIXED_REGION_BOUNDS_LON_SPAN", "0"
+            buildConfigField "String", "FIXED_REGION_LANG", "null"
+            buildConfigField "String", "FIXED_REGION_CONTACT_EMAIL", "null"
+            buildConfigField "boolean", "FIXED_REGION_SUPPORTS_OBA_DISCOVERY_APIS", "true"
+            buildConfigField "boolean", "FIXED_REGION_SUPPORTS_OBA_REALTIME_APIS", "true"
+            buildConfigField "boolean", "FIXED_REGION_SUPPORTS_SIRI_REALTIME_APIS", "false"
+            buildConfigField "String", "FIXED_REGION_TWITTER_URL", "null"
+            buildConfigField "String", "FIXED_REGION_STOP_INFO_URL", "null"
+        }
+
+        release {
+//            buildConfigField "String", "DATABASE_AUTHORITY", "\"edu.gatech.ppl.cycleatlanta\""
+            manifestPlaceholders = [databaseAuthority: "edu.gatech.ppl.cycleatlanta"]
+            buildConfigField "boolean", "USE_FIXED_REGION", "false" // Supports multi-region
+            // Below fields need to be defined so flavor builds, but will not be used by app
+            buildConfigField "String", "FIXED_REGION_NAME", "null"
+            buildConfigField "String", "FIXED_REGION_OBA_BASE_URL", "null"
+            buildConfigField "String", "FIXED_REGION_SIRI_BASE_URL", "null"
+            buildConfigField "double", "FIXED_REGION_BOUNDS_LAT", "0"
+            buildConfigField "double", "FIXED_REGION_BOUNDS_LON", "0"
+            buildConfigField "double", "FIXED_REGION_BOUNDS_LAT_SPAN", "0"
+            buildConfigField "double", "FIXED_REGION_BOUNDS_LON_SPAN", "0"
+            buildConfigField "String", "FIXED_REGION_LANG", "null"
+            buildConfigField "String", "FIXED_REGION_CONTACT_EMAIL", "null"
+            buildConfigField "boolean", "FIXED_REGION_SUPPORTS_OBA_DISCOVERY_APIS", "true"
+            buildConfigField "boolean", "FIXED_REGION_SUPPORTS_OBA_REALTIME_APIS", "true"
+            buildConfigField "boolean", "FIXED_REGION_SUPPORTS_SIRI_REALTIME_APIS", "false"
+            buildConfigField "String", "FIXED_REGION_TWITTER_URL", "null"
+            buildConfigField "String", "FIXED_REGION_STOP_INFO_URL", "null"
+        }
+    }
+
+    applicationVariants.all {
+        variant ->
+            def authority;
+            authority = '"' + "edu.gatech.ppl.cycleatlanta" + '"'
+            // Must keep the original OBA authority
+            variant.buildConfigField "String", "DATABASE_AUTHORITY", authority
     }
 }

@@ -147,9 +147,6 @@ public class TripPurposeActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				// TODO Auto-generated method stub
-				// view.setSelected(true);
-				// view.setBackgroundDrawable(parent.getResources().getDrawable(R.drawable.bg_key));
 				clearSelection();
 				oldSelection = view;
 				view.setBackgroundColor(Color.parseColor("#ff33b5e5"));
